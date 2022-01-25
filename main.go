@@ -11,7 +11,7 @@ func main() {
 	y_gold := 1
 	var pola = [6][8]string{
 		{"#", "#", "#", "#", "#", "#", "#", "#"},
-		{"#", ".", ".", ".", ".", ".", ".", "."},
+		{"#", ".", ".", ".", ".", ".", ".", "#"},
 		{"#", ".", "#", "#", "#", ".", ".", "#"},
 		{"#", ".", ".", ".", "#", ".", "#", "#"},
 		{"#", "X", "#", ".", ".", ".", ".", "#"},
@@ -21,7 +21,10 @@ func main() {
 	for v := range pola {
 		fmt.Println(pola[v])
 	}
-	fmt.Println("Navigation")
+	fmt.Println("Press A/B/C to Navigation")
+	fmt.Println("Up/North A step(s)")
+	fmt.Println("Right/East B step(s)")
+	fmt.Println("Down/South C step(s)")
 	fmt.Scanln(&key)
 	for {
 		for i := range pola {
@@ -96,6 +99,14 @@ func main() {
 						}
 						fmt.Scanln(&key)
 					}
+				case "H":
+					pola[y_gold][x_gold] = "$"
+					for v := range pola {
+						fmt.Println(pola[v])
+					}
+					fmt.Println("Press key navigation to continue.")
+					fmt.Scanln(&key)
+
 				default:
 					for v := range pola {
 						fmt.Println(pola[v])
@@ -106,7 +117,11 @@ func main() {
 			}
 		}
 		if success == 1 {
-			fmt.Println("Horayy sucessc!!")
+			pola[y_gold][x_gold] = "$"
+			fmt.Println("Horrayy sucess!!")
+			for v := range pola {
+				fmt.Println(pola[v])
+			}
 			break
 		}
 	}
