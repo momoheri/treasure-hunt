@@ -42,6 +42,7 @@ func main() {
 						} else {
 							if gold(x_gold, y_gold, j, i-y) {
 								success = 1
+								pola[i][j] = "."
 								break
 							}
 							pola[i-y][j] = "X"
@@ -65,6 +66,7 @@ func main() {
 						} else {
 							if gold(x_gold, y_gold, j+x, i) {
 								success = 1
+								pola[i][j] = "."
 								break
 							}
 							pola[i][j+x] = "X"
@@ -88,6 +90,7 @@ func main() {
 						} else {
 							if gold(x_gold, y_gold, j, i+y) {
 								success = 1
+								pola[i][j] = "."
 								break
 							}
 							pola[i+y][j] = "X"
