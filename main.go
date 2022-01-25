@@ -7,11 +7,13 @@ import (
 func main() {
 	var key string
 	success := 0
+	x_gold := 6
+	y_gold := 1
 	var pola = [6][8]string{
 		{"#", "#", "#", "#", "#", "#", "#", "#"},
-		{"#", ".", ".", ".", ".", ".", "$", "."},
+		{"#", ".", ".", ".", ".", ".", ".", "."},
 		{"#", ".", "#", "#", "#", ".", ".", "#"},
-		{"#", ".", ".", ".", "#", "$", "#", "#"},
+		{"#", ".", ".", ".", "#", ".", "#", "#"},
 		{"#", "X", "#", ".", ".", ".", ".", "#"},
 		{"#", "#", "#", "#", "#", "#", "#", "#"},
 	}
@@ -35,7 +37,7 @@ func main() {
 							}
 							fmt.Scanln(&key)
 						} else {
-							if pola[i-y][j] == "$" {
+							if gold(x_gold, y_gold, j, i-y) {
 								success = 1
 								break
 							}
@@ -58,7 +60,7 @@ func main() {
 							}
 							fmt.Scanln(&key)
 						} else {
-							if pola[i][j+x] == "$" {
+							if gold(x_gold, y_gold, j+x, i) {
 								success = 1
 								break
 							}
@@ -81,7 +83,7 @@ func main() {
 							}
 							fmt.Scanln(&key)
 						} else {
-							if pola[i+y][j] == "$" {
+							if gold(x_gold, y_gold, j, i+y) {
 								success = 1
 								break
 							}
@@ -108,4 +110,12 @@ func main() {
 			break
 		}
 	}
+}
+
+func gold(x int, y int, v1 int, v2 int) bool {
+	//log.Println(x, y, v1, v2)
+	if x == v1 && y == v2 {
+		return true
+	}
+	return false
 }
