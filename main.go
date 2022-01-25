@@ -37,7 +37,6 @@ func main() {
 						} else {
 							if pola[i-y][j] == "$" {
 								success = 1
-								fmt.Println("Horayy sucess!!")
 								break
 							}
 							pola[i-y][j] = "X"
@@ -61,7 +60,6 @@ func main() {
 						} else {
 							if pola[i][j+x] == "$" {
 								success = 1
-								fmt.Println("Horayy sucessc!!")
 								break
 							}
 							pola[i][j+x] = "X"
@@ -85,7 +83,6 @@ func main() {
 						} else {
 							if pola[i+y][j] == "$" {
 								success = 1
-								fmt.Println("Horayy sucessc!!")
 								break
 							}
 							pola[i+y][j] = "X"
@@ -101,7 +98,7 @@ func main() {
 					for v := range pola {
 						fmt.Println(pola[v])
 					}
-					fmt.Println("Invalid Key Navigation")
+					fmt.Println("Invalid Key")
 					fmt.Scanln(&key)
 				}
 			}
